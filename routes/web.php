@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Home')->group(function(){
+    Route::get('/', 'HomeController');
+
+    Route::get('/about', 'AboutController@index');
+    Route::get('/blog', 'BlogController@index');
+    Route::get('/contact', 'ContactController@index');
+    Route::get('/destinations', 'DestinationController@index');
+    Route::get('/destinations/{slug}', 'DestinationController@show');
 });

@@ -25,7 +25,6 @@ class Search extends Google{
    * @return array
    */
   public static function getNearbyHotels($lat, $lng, $orderby = 'proximity', $itensPerPage = '6'){
-    // get hotels
     $hotels = self::getHotels($lat, $lng, $itensPerPage);
     $hotels = self::orderHotels($hotels, $lat, $lng, $orderby);
 
@@ -110,7 +109,7 @@ class Search extends Google{
       $latDestination *= $pi80;
       $lngDestination *= $pi80;
 
-      $radiusEath = 6372.797; // mean radius of Earth in km
+      $radiusEath = 6372.797;
       $dlat = $latDestination - $latOrigin;
       $dlon = $lngDestination - $lngOrigin;
 

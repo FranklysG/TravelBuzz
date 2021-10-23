@@ -10,12 +10,9 @@ function geolocation() {
 
             $.getJSON(geolocation).done(function(location) {
                 console.log(location.results)
-                // document.querySelector('#country').html(location.results[0].address_components[5].long_name);
-                // document.querySelector('#state').html(location.results[0].address_components[4].long_name);
                 document.querySelector('#search_input').value = location.results[0].address_components[2].long_name;
-                // document.querySelector('#address').html(location.results[0].formatted_address);
-                document.querySelector('#lat').html(position.coords.latitude);
-                document.querySelector('#lng').html(position.coords.longitude);
+                document.querySelector('#lat').value = position.coords.latitude;
+                document.querySelector('#lng').value = position.coords.longitude;
             })
 
         }
@@ -28,4 +25,4 @@ function geolocation() {
     }
 }
 
-// google.maps.event.addDomListener(window, 'load', geolocation);
+google.maps.event.addDomListener(window, 'load', geolocation);

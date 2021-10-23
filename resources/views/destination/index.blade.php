@@ -46,6 +46,23 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-lg align-items-end">
+                                <div class="form-group">
+                                    <label for="#">Itens Per Page</label>
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                            <select name="itensPerPage" id="" class="form-control"  style="color:#838288 !important;">
+                                                <option value="6"> 6</option>
+                                                <option value="10"> 10</option>
+                                                <option value="30"> 30</option>
+                                                <option value="50"> 50</option>
+                                                <option value=""> all</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="col-lg align-self-end">
                                 <div class="form-group">
                                     <div class="form-field">

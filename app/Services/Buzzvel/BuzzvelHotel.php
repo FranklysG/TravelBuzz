@@ -19,8 +19,7 @@ class BuzzvelHotel extends Buzzvel{
 
     /**
    * Run the database seeds.
-   * Metodo resposavel por carregar todos os hoteis da api em banco 
-   * a fim de otimizar a consulta 
+   * Responsible method for loading all api hotels into a database in order to optimize the query
    * @return void
    */
     public static function searchHotelList(){
@@ -32,9 +31,8 @@ class BuzzvelHotel extends Buzzvel{
     
     /**
    * Run the database seeds.
-   * Metodo resposavel tratar os dados recebidos via api 
-   * a fim de otimizar a consulta 
-   * @param array $data todos os dados recuperados da api
+   * Responsible method to handle data received via api and complete with the remaining data
+   * @param array $data all data retrieved from the api
    * @return void
    */
     public function deparaHotelList($data){
@@ -59,8 +57,7 @@ class BuzzvelHotel extends Buzzvel{
     
     /**
    * Run the database seeds.
-   * Metodo resposavel tratar os dados recebidos via api 
-   * a fim de otimizar a consulta 
+   * Method responsible for retrieving the address of the suggested locations 
    * @param string $lat latitude
    * @param string $lng longitude
    * @return void
@@ -89,8 +86,8 @@ class BuzzvelHotel extends Buzzvel{
 
     /**
    * Run the database seeds.
-   * Metodo resposavel por salvar todos os hoteis da api em banco 
-   * a fim de otimizar a consulta 
+   * Metodod responsible for saving the api data in the database
+   * @param array $data
    * @return void
    */
     public static function store($data = array()){

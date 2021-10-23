@@ -1,3 +1,7 @@
+/**
+ * Method responsible for requesting user location data
+ * @return void
+ */
 function geolocation() {
     if("geolocation" in navigator){
         navigator.geolocation.getCurrentPosition(success, error);
@@ -21,7 +25,7 @@ function geolocation() {
             console.log(err)
         }
     }else{
-        alert("We couldn't reach your position") 
+        alert("We couldn't reach your position") ;
     }
 }
 

@@ -18,30 +18,28 @@ class Search extends Google{
 
 
    /**
-   * Método responsável por retornar uma listagem de hoteis próximos ao local informado
-   * @param string $lat
-   * @param string $lng
+   * Method responsible for returning a list of hotels near the location informed
+   * @param string $lat Desired parameters "latitude"
+   * @param string $lng Desired parameters "longitude"
    * @param string $orderby Desired parameters “proximity” or “pricepernight”  
    * @return array
    */
-  public static function getNearbyHotels($lat, $lng, $orderby = 'proximity'){
+  public static function getNearbyHotels($lat, $lng, $orderby = 'proximity', $itensPerPage = '10'){
     // get hotels
-    $hotels = self::getHotels($lat, $lng);
+    $hotels = self::getHotels($lat, $lng, $itensPerPage);
     $hotels = self::orderHotels($hotels, $lat, $lng, $orderby);
 
     return $hotels;
   }
 
   /**
-   * Run the database seeds.
-   * Metodo resposavel tratar os dados recebidos via api 
-   * a fim de otimizar a consulta 
+   * Method responsible for merging the data saved in the database with the distance between the points
    * @param string $lat latitude
    * @param string $lng longitude
    * @return void
    */
-  public function getHotels($lat, $lng){
-    $hotels = Hotel::all();
+  public function getHotels($lat, $lng, $itensPerPage){
+    $hotels = Hotel::limit($itensPerPage)->get();
     $destinations = array();
     foreach($hotels as $hotel){
       $distance = self::getDistanceHotels($lat, $lng, $hotel->lat, $hotel->lng);
@@ -59,7 +57,14 @@ class Search extends Google{
     return $destinations;
   }
 
-  //order hotels
+   /**
+   * Method responsible for ordering the hotels according to the requested "price" or "proximity"
+   * @param array $hotel all intes hotel
+   * @param string $latitude latitude
+   * @param string $longitude longitude
+   * @param string $orderBy orderBy sort by "proximity" or by "price"
+   * @return void
+   */
   public static function orderHotels( $hotels, $latitude, $longitude, $orderBy )
   {
       $orderBy = isset($orderBy) && !empty($orderBy) ? $orderBy : "proximity";
@@ -85,7 +90,14 @@ class Search extends Google{
       return $hotels;
   }
 
-  // Calculate distance between two points in latitude and longitude in km's or miles
+   /**
+   * Method responsible for calculating the distance in km or in miles
+   * @param string $latOrigin latitude of Origin
+   * @param string $lngOrigin longitude of Origin
+   * @param string $latDestinations latitude of Destinations
+   * @param string $lngDestinations longitude of Destinations
+   * @return void
+   */
   public static function getDistanceHotels($latOrigin,$lngOrigin,$latDestination,$lngDestination){
       $latOrigin = floatval($latOrigin);
       $lngOrigin = floatval($lngOrigin);

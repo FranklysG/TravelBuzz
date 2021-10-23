@@ -21,7 +21,7 @@ class Buzzvel{
   protected $endpoint;
   
   /**
-   * apikey token de acesso a google patform
+   * apikey access token of google patform
    * @var string
   */
   protected $apiKey;
@@ -32,9 +32,9 @@ class Buzzvel{
   }
 
   /**
-   * Método repsonsavel por retornar o ENDPOINT completo da requisição
-   * @param string $endpoint nome do endpoint
-   * @param array $params parametros 
+   * Method responsible for returning the complete ENDPOINT of the request
+   * @param string $endpoint endpoint name
+   * @param array $params params
    * @param boolean $encode
    * @return string
    */
@@ -52,21 +52,15 @@ class Buzzvel{
 
     $endpoint .= $route;
 
-    // process endpoint
-    foreach ($params as $key => $value) {
-      if ($encode) $value = rawurlencode($value);
-      $endpoint = str_replace('{' . $key . '}', $value, $endpoint);
-    }
-
     return $endpoint;
   }
 
   /**
-   * Método responsável por consumir os endpoints solicitados
-   * @param string $endpoint nome do endpoint 
-   * @param string $type metodo da requisição
-   * @param array $params parametros para o endpoint
-   * @param array $data dados enviados na requisição
+   * Method responsible for consuming the requested endpoints
+   * @param string $endpoint endpoint name
+   * @param string $type request method
+   * @param array $params params of endpoint
+   * @param array $data data sent in the request
    * @return array
    */
   public function send($type, $route = null, $params = array(), $data = array()){

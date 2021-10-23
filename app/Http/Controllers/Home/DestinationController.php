@@ -25,12 +25,12 @@ class DestinationController extends Controller
      */
     public function index(Request $request)
     {
-        // $city = $request->query('city');
         $lat = $request->query('lat');
         $lng = $request->query('lng');
         $orderby = $request->query('orderby');
+        $itenPerPage = $request->query('itensPerPage');
 
-        $destinations = Search::getNearbyHotels($lat, $lng, $orderby);
+        $destinations = Search::getNearbyHotels($lat, $lng, $orderby, $itenPerPage);
         
         $hotel = new Hotel;
         $prices = $hotel::where('price', '>', '0')->orderBy('price', 'asc')->get();

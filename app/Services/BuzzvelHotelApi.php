@@ -19,12 +19,12 @@ class BuzzvelHotelApi{
   
 /**
    * Método responsavel por processar e retornar o enpoint solicitado
-   * @param string $endpoint nome do endpoint
-   * @param array $params Parametros do endpoint
+   * @param string $endpoint the endpoint name
+   * @param array $params the endpoint params
    * @param boolean $encode
    * @return string
    */
-  private static function getEndpoint(string $endpoint, array $params = [], $encode = true){
+  private static function getEndpoint($endpoint, $params = [], $encode = true){
     
     $apiKey = $_ENV['API_KEY'];
     switch ($endpoint) {
@@ -39,15 +39,11 @@ class BuzzvelHotelApi{
       case 'geocode-address':
         $endpoint = "https://maps.googleapis.com/maps/api/geocode/json?language=pt-br&address={address}&key=".$apiKey;
         break;
-
-      case 'distancematrix':
-        $endpoint = "https://maps.googleapis.com/maps/api/distancematrix/json?language=pt-br&destinations={destinations}&origins={origins}&key=".$apiKey;
-        break;
     }
 
-    // Processa endpoint
+    // process endpoint
     foreach ($params as $key => $value) {
-      if ($encode) $value = rawurlencode($value); // converte para padrao de url
+      if ($encode) $value = rawurlencode($value);
       $endpoint = str_replace('{' . $key . '}', $value, $endpoint);
     }
 
@@ -56,13 +52,13 @@ class BuzzvelHotelApi{
 
   /**
    * Método responsável por consumir os endpoints solicitados
-   * @param string $endpoint Nome do endpoint
-   * @param string $type Tipo de requisição
-   * @param array $params Parametros que compoem o endpoint
-   * @param array $data Dados de envio para tipos de requisição como delete, put ou post
+   * @param string $endpoint the endpoint name 
+   * @param string $type request method
+   * @param array $params param the endpoint
+   * @param array $data submission data for request types such as delete, put or post
    * @return array
    */
-  public static function send(string $endpoint, string $type, array $params = [], array $data = []){
+  public static function send($endpoint, $type, $params = [], $data = []){
     $endpoint = self::getEndpoint($endpoint, $params);
     
     switch ($type) {

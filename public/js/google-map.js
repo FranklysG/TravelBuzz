@@ -14,8 +14,8 @@ function geolocation() {
                 // document.querySelector('#state').html(location.results[0].address_components[4].long_name);
                 document.querySelector('#search_input').value = location.results[0].address_components[2].long_name;
                 // document.querySelector('#address').html(location.results[0].formatted_address);
-                // document.querySelector('#latitude').html(position.coords.latitude);
-                // document.querySelector('#longitude').html(position.coords.longitude);
+                document.querySelector('#lat').html(position.coords.latitude);
+                document.querySelector('#lng').html(position.coords.longitude);
             })
 
         }

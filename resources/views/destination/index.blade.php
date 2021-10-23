@@ -73,6 +73,9 @@
                     <form action="#" class="search-property-1">
                         <div class="row">
                             <div class="col-lg align-items-end">
+                                <!-- hide fileds of long and lat -->
+                                <input type="text" id="lat" class="form-control" >
+                                <input type="text" id="lng" class="form-control" >
                                 <div class="form-group">
                                     <label for="#">Destination</label>
                                     <div class="form-field">

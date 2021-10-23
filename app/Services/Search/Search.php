@@ -24,7 +24,7 @@ class Search extends Google{
    * @param string $orderby Desired parameters “proximity” or “pricepernight”  
    * @return array
    */
-  public static function getNearbyHotels($lat, $lng, $orderby = 'proximity', $itensPerPage = '10'){
+  public static function getNearbyHotels($lat, $lng, $orderby = 'proximity', $itensPerPage = '6'){
     // get hotels
     $hotels = self::getHotels($lat, $lng, $itensPerPage);
     $hotels = self::orderHotels($hotels, $lat, $lng, $orderby);

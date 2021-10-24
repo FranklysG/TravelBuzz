@@ -1,65 +1,67 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<br> <br>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">  
+    <img alt="Buzzvel" height="100" src="public/readme/buzzvel.png">
+</div>
 
-## About Laravel
+<br><br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+##
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Informações do projeto:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Descrição:**  O projeto TravelBuzz tem como objetivo retornar os hotéis mais próximos de um ponto de origem indicado pelo usuário ordenando-os por proximidade ou preço por noite de acordo com a preferência do mesmo.
 
-## Learning Laravel
+**Tecnologias utilizadas no projeto:** <code><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" title="DOCKER" width="40" height="40"/></code>, <code><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" title="GIT" width="40" height="40"/></code>,  <code><img alt="Composer"   height="40" src="http://icons.luizlima.online/composer/composer-original.svg"></code>,  <code><img alt="PHP"        height="40" src="http://icons.luizlima.online/php/php-original.svg"></code>, <code><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" title="MYSQL" width="40" height="40"/></code>, <code><img alt="Laravel"    height="40" src="http://icons.luizlima.online/laravel/laravel-plain.svg"></code> e <code><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" title="BOOTSTRAP" width="40" height="40"/></code>. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Integrações:** Google Maps (geocode e distancematrix) juntamente com o endpoint de listagem de hotéis da Buzzvel.     
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Interface do projeto:
 
-## Laravel Sponsors
+<div align="center">  
+    <code><img alt="destination" height="100" src="public/readme/destination_geolocation.png"></code>
+    <code><img alt="destination" height="100" src="public/readme/destination_calendar.png"></code>
+    <code><img alt="destination" height="100" src="public/readme/destination_tour.png"></code>
+</div>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Configurando projeto docker: <code><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" title="DOCKER" width="40" height="40"/></code>
 
-### Premium Partners
+Primeiramente, renomeie o arquivo ".evn-example" da raiz do projeto para ".env".<br/> 
+**Em seguida execute o comando docker abaixo pelo terminal na raiz do projeto para configurar o ambiente de desenvolvimento Docker:**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+`$ docker-compose build app`
 
-## Contributing
+**Para executar o ambiente de desenvolvimento, digite o comando docker abaixo:**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+`$ docker-compose up -d`
 
-## Code of Conduct
+**Isso executará seus contêineres em segundo plano. Para mostrar informações sobre o estado de seus serviços ativos, execute:**
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+`$ docker-compose ps`
 
-## Security Vulnerabilities
+## Instalando as dependências do projeto
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Execute o composer install para instalar as dependências do aplicativo:**
 
-## License
+`$ composer install`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Gerando nova key Laravel:
+
+A última coisa que precisamos fazer antes de testar o aplicativo é gerar uma chave única para o aplicativo com a artisan, a ferramenta de linha de comando do Laravel. Esta chave é usada para criptografar sessões de usuário e outros dados sensíveis:
+
+`$ php artisan key:generate`
+
+### Preparando aplicação para uso:
+
+Execute o comando abaixo para que o artisan do laravel configure o banco de dados e popule a tabela hotel a partir do seeder configurado
+
+`$ php artisan db:seed`
+
+**Obs. O comando de migrate levara um tempo para finalizar sua execução, pois além de criar as tabelas necessárias para o funcionamento do siste, será executado o seeder responsável por popular a tabela hotel a partir do consumo da api buzzvel**
+
+
+### Acessando o projeto pelo navegador:
+
+Em uma nova aba no seu navegador acesse o nome de domínio ou endereço IP do seu servidor na porta 8000, ou clique no link abaixo:
+
+[Clique aqui para acessar o projeto](http://localhost:8000)

@@ -55,6 +55,12 @@ A última coisa que precisamos fazer antes de testar o aplicativo é gerar uma c
 
 Execute o comando abaixo para que o artisan do laravel configure o banco de dados e popule a tabela hotel a partir do seeder configurado
 
+rodand as migrations
+
+`$ php artisan migrate`
+
+populando o banco de dados
+
 `$ php artisan db:seed`
 
 **Obs. O comando de migrate levara um tempo para finalizar sua execução, pois além de criar as tabelas necessárias para o funcionamento do siste, será executado o seeder responsável por popular a tabela hotel a partir do consumo da api buzzvel**

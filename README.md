@@ -19,9 +19,9 @@
 ### Interface do projeto:
 
 <div align="center">  
-    <code><img alt="destination" height="140" src="public/readme/destination_geolocation.png"></code>
-    <code><img alt="destination" height="140" src="public/readme/destination_calendar.png"></code>
-    <code><img alt="destination" height="140" src="public/readme/destination_tour.png"></code>
+    <code><img alt="destination" height="130" src="public/readme/destination_geolocation.png"></code>
+    <code><img alt="destination" height="130" src="public/readme/destination_calendar.png"></code>
+    <code><img alt="destination" height="130" src="public/readme/destination_tour.png"></code>
 </div>
 
 ### Configurando projeto docker: <code><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" title="DOCKER" width="40" height="40"/></code>

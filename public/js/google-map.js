@@ -13,7 +13,6 @@ function geolocation() {
             var geolocation = 'https://maps.googleapis.com/maps/api/geocode/json?language=pt-br&key=AIzaSyAnFB0-MM3wedtBe_NWrO_0V7AbvtNuL9s&latlng=' + lat+ ',' + lng;
 
             $.getJSON(geolocation).done(function(location) {
-                console.log(location.results)
                 document.querySelector('#search_input').value = location.results[0].address_components[2].long_name;
                 document.querySelector('#lat').value = position.coords.latitude;
                 document.querySelector('#lng').value = position.coords.longitude;

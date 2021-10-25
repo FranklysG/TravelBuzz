@@ -37,17 +37,4 @@ class DestinationController extends Controller
         return view('destination.index', [ 'destinations' =>  $destinations, 'prices' => $prices]);
     }
 
-    /**
-     * Method respose for refaund this objects of destinations
-     * @param $var
-     * @return mixed view
-     */
-    public function show(Request $request)
-    {
-        $city = $request->query('city');
-        $lat = $request->query('lat');
-        $lng = $request->query('lng');
-        $price = $request->query('price');
-        return view('destination.show', [ 'slug' => $city]);
-    }
 }
